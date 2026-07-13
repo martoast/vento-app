@@ -14,6 +14,6 @@
 - [ ] Revisión de copy por el cliente.
 
 ## Ideas / siguientes
-- [ ] Fotos reales de bodega y nichos CFE/CESPT (hoy son tarjetas con ícono).
+- [ ] Sustituir los renders AI de bodega y nichos CFE/CESPT (vento-bodega.jpg, vento-servicios.jpg — generados con Nano Banana) por renders reales del proyecto si el cliente los entrega.
 - [ ] Video del proyecto (no existe sección de video; agregar si el cliente entrega uno).
 - [ ] Ficha técnica descargable para brokers.

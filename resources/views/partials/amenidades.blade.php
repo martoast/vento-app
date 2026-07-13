@@ -33,13 +33,15 @@
             't' => 'Bodega',
             'sub' => 'Almacenamiento',
             'desc' => 'Espacio de almacenamiento asignado por departamento.',
-            'icon' => 'bodega',
+            'tags' => ['Por departamento'],
+            'imgs' => ['vento-bodega'],
         ],
         [
             't' => 'Servicios integrados',
             'sub' => 'Infraestructura',
             'desc' => 'Nichos de CFE y CESPT integrados al proyecto.',
-            'icon' => 'servicios',
+            'tags' => ['CFE', 'CESPT'],
+            'imgs' => ['vento-servicios'],
         ],
     ];
 
