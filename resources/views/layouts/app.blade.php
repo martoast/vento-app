@@ -234,7 +234,7 @@
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Vento · Comercializado por City Inmobiliaria. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.0</span></p>
+                <p>© {{ date('Y') }} Vento · Comercializado por City Inmobiliaria. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.1</span></p>
                 <p class="mt-2">
                     Las imágenes mostradas son representaciones ilustrativas del proyecto y pueden variar respecto al producto final.
                     La información de tipologías, medidas, precios, acabados y disponibilidad está sujeta a cambios sin previo aviso.
