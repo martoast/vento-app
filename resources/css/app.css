@@ -1,0 +1,404 @@
+@import 'tailwindcss';
+
+/* Form styling */
+@plugin '@tailwindcss/forms';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ------------------------------------------------------------------
+   Brand fonts (self-hosted)
+   Headings → Baskerville · Body → Titling Gothic Normal · Accent → Delight
+------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/Baskerville-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BoardWalk';
+    src: url('/fonts/BoardwalkAve-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BoardWalk';
+    src: url('/fonts/BoardwalkAve-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Titling Gothic Normal';
+    src: url('/fonts/TitlingGothic-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Titling Gothic Normal';
+    src: url('/fonts/TitlingGothic-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Titling Gothic Normal';
+    src: url('/fonts/TitlingGothic-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Delight';
+    src: url('/fonts/Delight-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Delight';
+    src: url('/fonts/Delight-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Delight';
+    src: url('/fonts/Delight-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ------------------------------------------------------------------
+   Vento — design tokens
+   "Diseño, calma y conexión"
+   Palette drawn from the project's materials: aplanado cálido (sand),
+   celosía de madera (wood), herrería negra (ink), verde olivo del
+   paisaje urbano y blanco cálido de interiores.
+------------------------------------------------------------------- */
+@theme {
+    --font-display: 'Baskerville', ui-serif, Georgia, serif;
+    --font-sans: 'Titling Gothic Normal', ui-sans-serif, system-ui, sans-serif;
+    --font-delight: 'Delight', ui-sans-serif, system-ui, sans-serif;
+
+    /* Sand / warm white & beige — page backgrounds */
+    --color-sand-50: #faf8f4;
+    --color-sand-100: #f4f0e7;
+    --color-sand-200: #e9e1d2;
+    --color-sand-300: #d9cbb2;
+    --color-sand-400: #c3ab85;
+
+    /* Verde olivo — dark bands, footer, deep accents */
+    --color-olive-300: #b3b78d;
+    --color-olive-400: #8f9464;
+    --color-olive-500: #757a4e;
+    --color-olive-600: #5c6139;
+    --color-olive-700: #464a2c;
+    --color-olive-800: #33361f;
+    --color-olive-900: #242718;
+    --color-olive-950: #191b0f;
+
+    /* Madera — the warm accent (CTAs, eyebrows on dark) */
+    --color-wood-300: #dcc09b;
+    --color-wood-400: #c8a173;
+    --color-wood-500: #ad8354;
+    --color-wood-600: #8e6941;
+
+    /* Supporting neutrals */
+    --color-stone-warm: #a49b8c;
+    --color-beige: #efe6d6;
+
+    /* Ink — warm charcoal text, never pure black */
+    --color-ink: #232019;
+    --color-ink-soft: #5c564a;
+
+    --tracking-eyebrow: 0.22em;
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------- */
+/* The overscroll canvas is painted with the html background — match the
+   dark hero/footer so rubber-banding never reveals a gray strip. */
+html {
+    background-color: var(--color-olive-950);
+}
+
+body {
+    @apply bg-sand-50 text-ink font-sans antialiased;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+::selection {
+    background-color: var(--color-wood-500);
+    color: var(--color-sand-50);
+}
+
+/* ------------------------------------------------------------------
+   Recurring editorial primitives
+------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------
+   First-load preloader
+------------------------------------------------------------------- */
+.is-loading { overflow: hidden; }
+
+#preloader {
+    transition: opacity 0.7s ease;
+    /* No-JS / failure safety: fade out after 14s even if the script never runs */
+    animation: preloaderSafety 0.5s ease 14s forwards;
+}
+#preloader.is-done {
+    opacity: 0;
+    pointer-events: none;
+}
+#preloader .preloader-mark {
+    animation: preloaderRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes preloaderRise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes preloaderSafety {
+    to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+/* ------------------------------------------------------------------
+   Bilingual visibility — both languages render; CSS shows the active one
+   based on [data-lang] on <html> (set pre-paint + by the Alpine lang store).
+   Default is Spanish; .lang-en only appears when data-lang="en".
+   `revert` restores each element's natural display (inline span, block p).
+------------------------------------------------------------------- */
+.lang-en { display: none; }
+[data-lang="en"] .lang-en { display: revert; }
+[data-lang="en"] .lang-es { display: none; }
+
+/* Eyebrow label — the small all-caps tracker above headlines */
+.eyebrow {
+    @apply font-sans text-xs font-semibold uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+}
+
+/* Nav link — premium sweep underline.
+   The line grows in from the left on hover and retracts to the right on
+   leave (the transform-origin swap), in the link's current text color. */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.55rem;
+    height: 1.5px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+/* Display headline base — Baskerville (uniform across all headlines) */
+.display {
+    @apply font-display;
+    line-height: 1.12;
+}
+
+/* Accent words inside headlines — same Baskerville, no special styling
+   (client wants a single uniform headline face). */
+.display em,
+.accent-italic {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Scroll-reveal initial states (driven by reveal.js) */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+}
+/* Staggered children */
+.reveal-group > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-group.is-revealed > * {
+    opacity: 1;
+    transform: none;
+}
+.reveal-group.is-revealed > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-group.is-revealed > *:nth-child(3) { transition-delay: 0.24s; }
+.reveal-group.is-revealed > *:nth-child(4) { transition-delay: 0.36s; }
+.reveal-group.is-revealed > *:nth-child(5) { transition-delay: 0.48s; }
+.reveal-group.is-revealed > *:nth-child(6) { transition-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-group > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Slow Ken Burns drift for the hero image */
+@keyframes kenburns {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+.kenburns {
+    animation: kenburns 18s ease-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+    .kenburns { animation: none; }
+}
+
+/* Film grain overlay — keeps renders from feeling CGI-clean */
+.grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------
+   Dual-row horizontal marquee gallery
+   Two tracks scroll in opposite directions and loop seamlessly.
+   The track holds TWO identical copies of the image list; each image
+   carries its own right margin (not flex gap) so translateX(-50%)
+   lands exactly on the seam with no jump.
+------------------------------------------------------------------- */
+.marquee {
+    overflow: hidden;
+    /* Soft fade at both edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+.marquee-track--ltr {
+    animation: marquee-ltr 70s linear infinite;
+}
+.marquee-track--rtl {
+    animation: marquee-rtl 85s linear infinite;
+}
+/* Pause both rows when hovering the whole gallery */
+.marquee-stage:hover .marquee-track {
+    animation-play-state: paused;
+}
+@keyframes marquee-rtl {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+@keyframes marquee-ltr {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track--ltr,
+    .marquee-track--rtl {
+        animation: none;
+    }
+    .marquee { overflow-x: auto; }
+}
+
+/* ------------------------------------------------------------------
+   Interactive site plan (Disponibilidad) — lot polygons over the
+   line-art plan. Status drives fill; hover/filter drive opacity.
+------------------------------------------------------------------- */
+.plan-lot {
+    stroke: rgba(250, 248, 244, 0.85);
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 0.35s ease, filter 0.25s ease, transform 0.25s ease;
+}
+.plan-lot--available { fill: var(--color-wood-500); opacity: 0.95; }
+.plan-lot--sold      { fill: var(--color-stone-warm); opacity: 0.62; }
+.plan-lot--reserved  { fill: var(--color-olive-400); opacity: 0.85; }
+.plan-lot:hover {
+    filter: brightness(1.22) saturate(1.15);
+    opacity: 1;
+    transform: scale(1.06);
+    stroke: #fff;
+}
+.plan-lot.is-dim { opacity: 0.08 !important; }
+
+/* Depth: drop-shadow lifts the plan off the dark band */
+.plan-svg { filter: drop-shadow(0 26px 44px rgba(0, 0, 0, 0.6)); }
+
+@keyframes planPulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+    .plan-lot--available { animation: planPulse 3s ease-in-out infinite; }
+}
+
+/* Apartments elevation — translucent tints over the (inverted) line drawing
+   directly on the dark band, so the building facade stays visible through. */
+.plan-unit {
+    stroke: rgba(250, 248, 244, 0.6);
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: opacity 0.3s ease, filter 0.25s ease;
+}
+.plan-unit--available { fill: var(--color-wood-500); opacity: 0.5; }
+.plan-unit--sold      { fill: var(--color-stone-warm); opacity: 0.42; }
+.plan-unit--reserved  { fill: var(--color-olive-400); opacity: 0.5; }
+.plan-unit:hover { opacity: 0.85; filter: brightness(1.15) saturate(1.1); stroke: #fff; }
+.plan-unit.is-dim { opacity: 0.06 !important; }
+
+@keyframes unitPulse { 0%, 100% { opacity: 0.38; } 50% { opacity: 0.65; } }
+@media (prefers-reduced-motion: no-preference) {
+    .plan-unit--available { animation: unitPulse 3.2s ease-in-out infinite; }
+}

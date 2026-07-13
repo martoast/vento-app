@@ -1,0 +1,14 @@
+[build]
+  command = "./netlify-build.sh"
+  publish = "dist"
+
+[build.environment]
+  PHP_VERSION = "8.3"
+  NODE_VERSION = "22"
+  APP_ENV = "production"
+  APP_DEBUG = "false"
+  SESSION_DRIVER = "array"
+  CACHE_STORE = "array"
+  CACHE_DRIVER = "array"
+  DB_CONNECTION = "sqlite"
+  LOG_CHANNEL = "stderr"

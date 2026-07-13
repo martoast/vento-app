@@ -1,0 +1,18 @@
+@extends('layouts.app')
+
+@section('content')
+    @include('partials.hero')
+    @include('partials.proyecto')
+    @include('partials.roofdeck')
+    @include('partials.tipologias')
+    @include('partials.aspiracional')
+    @include('partials.disponibilidad')
+    @include('partials.amenidades')
+    @include('partials.ubicacion')
+    @include('partials.interiores')
+    @include('partials.exteriores')
+    @include('partials.asesoria')
+    @include('partials.respaldo')
+    @include('partials.brokers')
+    @include('partials.cta-final')
+@endsection
