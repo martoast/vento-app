@@ -95,8 +95,8 @@
                             <span x-text="a.gallery.length"></span>
                         </span>
                         <div class="absolute inset-x-0 bottom-0 p-6">
-                            <p class="eyebrow mb-1 text-[0.55rem] text-wood-300" x-text="a.sub"></p>
-                            <h3 class="display text-2xl text-sand-50" x-text="a.t"></h3>
+                            <p class="eyebrow mb-1 text-[0.55rem] text-sand-50/90 drop-shadow-[0_1px_8px_rgba(25,27,15,0.9)]" x-text="a.sub"></p>
+                            <h3 class="display text-2xl text-sand-50 drop-shadow-[0_1px_10px_rgba(25,27,15,0.8)]" x-text="a.t"></h3>
                             <span class="mt-2 inline-flex items-center gap-1.5 text-[0.7rem] font-medium text-sand-100/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                 Ver galería
                                 <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -113,8 +113,8 @@
                             <svg x-show="a.icon === 'servicios'" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13H11l-1 9L18.5 11H12z"/></svg>
                         </span>
                         <div>
-                            <p class="eyebrow mb-1 text-[0.55rem] text-wood-300" x-text="a.sub"></p>
-                            <h3 class="display text-2xl text-sand-50" x-text="a.t"></h3>
+                            <p class="eyebrow mb-1 text-[0.55rem] text-sand-50/90 drop-shadow-[0_1px_8px_rgba(25,27,15,0.9)]" x-text="a.sub"></p>
+                            <h3 class="display text-2xl text-sand-50 drop-shadow-[0_1px_10px_rgba(25,27,15,0.8)]" x-text="a.t"></h3>
                             <p class="mt-3 text-sm leading-relaxed text-sand-100/75" x-text="a.desc"></p>
                         </div>
                     </div>
