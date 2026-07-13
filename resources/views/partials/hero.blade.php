@@ -26,12 +26,5 @@
         <p class="mx-auto mt-4 max-w-xl font-sans text-base font-light leading-snug tracking-wide text-sand-100/95 drop-shadow-[0_2px_16px_rgba(25,27,15,0.75)] sm:text-lg">
             Diseño, <span class="font-bold text-sand-50">calma</span> y <span class="font-bold text-sand-50">conexión</span> para vivir una nueva etapa.
         </p>
-        <p class="mx-auto mt-4 max-w-md text-sm leading-relaxed text-sand-100/85 drop-shadow-[0_2px_16px_rgba(25,27,15,0.7)] sm:max-w-xl sm:text-base">
-            Un proyecto residencial creado para quienes buscan espacios funcionales, una atmósfera tranquila y cercanía con puntos estratégicos de la ciudad.
-        </p>
-        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
-            <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Solicitar disponibilidad</a>
-            <a href="#tipologias" class="eyebrow inline-flex items-center justify-center rounded-full border border-sand-50/40 px-8 py-4 text-[0.7rem] text-sand-50 backdrop-blur-[2px] transition-colors hover:bg-sand-50/10">Ver tipologías</a>
-        </div>
     </div>
 </section>
