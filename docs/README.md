@@ -10,7 +10,9 @@ copy, dependencies, and the knobs you can tune).
 > Looking for the page-level blueprint instead of individual components? See
 > **[landing-page-structure.md](landing-page-structure.md)** — the section order,
 > layout archetypes, and porting checklist for replicating this landing page's
-> structure on other real-estate developments.
+> structure on other real-estate developments. And for the **end-to-end process**
+> of launching a new sibling site (clone → rebrand → QA → deploy → repo + CI), see
+> **[new-landing-playbook.md](new-landing-playbook.md)**.
 
 ## Catalog
 
