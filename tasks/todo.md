@@ -15,5 +15,5 @@
 
 ## Ideas / siguientes
 - [ ] Sustituir los renders AI de bodega y nichos CFE/CESPT (vento-bodega.jpg, vento-servicios.jpg — generados con Nano Banana) por renders reales del proyecto si el cliente los entrega.
-- [ ] Video del proyecto (no existe sección de video; agregar si el cliente entrega uno).
+- [ ] Sustituir el video placeholder (embed compartido de Real del Mar, `partials/video.blade.php`) por el video propio de Vento cuando exista.
 - [ ] Ficha técnica descargable para brokers.

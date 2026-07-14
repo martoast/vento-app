@@ -109,6 +109,11 @@ Apply the blueprint **literally** — copy each archetype's layout, swap only co
 | brokers boxed banner | respaldo (Grupo Frisa) | respaldo (logos strip) **and** brokers |
 
 Mechanics:
+- **The video section is mandatory** (slot 3, framed embed after proyecto). If the
+  project has no video yet, embed the shared Real del Mar video
+  (`youtube-nocookie.com/embed/2RTL8rdvZIY`) as a placeholder + TODO in tasks/todo.md.
+  Headless-QA note: YouTube embeds show "Video no disponible" in headless Chrome —
+  that's an artifact, verify in a real browser or trust the live siblings.
 - Editable business data (tipologías, estados Disponible/Apartado/Vendido, specs,
   amenidades) lives in `@php` arrays at the top of each partial — never inline in markup.
 - Floor plans open in the existing `gallery()` Alpine lightbox — wrap the section in
