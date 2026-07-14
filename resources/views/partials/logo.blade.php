@@ -8,5 +8,5 @@
 @endphp
 <span class="flex flex-col leading-none {{ $color }}" role="img" aria-label="Vento — departamentos residenciales en Tijuana">
     <span class="display text-2xl font-light uppercase tracking-[0.3em] xl:text-3xl">Vento</span>
-    <span class="eyebrow mt-1.5 text-[0.5rem] tracking-[0.32em] text-wood-400">City Inmobiliaria</span>
+    <span class="eyebrow mt-1.5 text-[0.5rem] tracking-[0.32em] opacity-85">City Inmobiliaria</span>
 </span>
