@@ -36,6 +36,9 @@ jobs:
 
       - name: Build static export
         env:
+          # Production webhook — repo Settings → Secrets and variables → Actions → Variables.
+          # Real env vars beat the .env file, so this overrides .env.example's dev default.
+          FORMS_WEBHOOK_URL: ${{ vars.FORMS_WEBHOOK_URL || 'https://bolt-crm.fullstacklabs.org/webhooks/forms/lERYqjoCHHwRxq3RbCOE920KUonabGPTF8hFEddicl8rFVkh' }}
           APP_ENV: production
           APP_DEBUG: 'false'
           SESSION_DRIVER: array

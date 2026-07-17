@@ -14,6 +14,8 @@ return [
     |
     */
 
+    'forms_webhook' => env('FORMS_WEBHOOK_URL'),
+
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
