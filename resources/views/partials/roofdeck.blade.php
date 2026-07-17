@@ -13,7 +13,7 @@
             <p class="mt-6 text-lg leading-relaxed text-sand-100/90 drop-shadow-[0_2px_18px_rgba(25,27,15,0.55)]">
                 El roof deck compartido de Vento amplía la experiencia residencial con un espacio pensado para descansar, convivir y disfrutar momentos al aire libre sin salir del edificio.
             </p>
-            <a href="#amenidades" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Ver amenidades</a>
+            <a href="#amenidades" class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-city-light px-8 py-4 text-[0.7rem] text-city-blue transition-colors hover:bg-city-white">Ver amenidades</a>
         </div>
     </div>
 </section>

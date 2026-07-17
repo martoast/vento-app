@@ -11,7 +11,7 @@
                     </p>
                     <a href="#contacto" id="cta-brokers"
                         onclick="var s = document.getElementById('interes'); if (s) s.value = 'Información para brokers';"
-                        class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-center text-[0.7rem] leading-snug text-sand-50 transition-colors hover:bg-wood-400">Quiero recibir información para brokers</a>
+                        class="eyebrow mt-8 inline-flex items-center justify-center rounded-full bg-city-light px-8 py-4 text-center text-[0.7rem] leading-snug text-city-blue transition-colors hover:bg-city-white">Quiero recibir información para brokers</a>
                 </div>
                 <div class="relative min-h-[260px] lg:min-h-full">
                     <img src="{{ asset('images/vento-cocina-luz.jpg') }}" alt="Interior de departamento Vento" loading="lazy"

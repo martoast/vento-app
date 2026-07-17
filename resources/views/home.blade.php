@@ -6,8 +6,6 @@
     @include('partials.video')
     @include('partials.roofdeck')
     @include('partials.tipologias')
-    @include('partials.aspiracional')
-    @include('partials.disponibilidad')
     @include('partials.amenidades')
     @include('partials.ubicacion')
     @include('partials.interiores')

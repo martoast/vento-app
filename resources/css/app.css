@@ -110,31 +110,36 @@
     --font-delight: 'Delight', ui-sans-serif, system-ui, sans-serif;
 
     /* Sand / warm white & beige — page backgrounds */
-    --color-sand-50: #faf8f4;
-    --color-sand-100: #f4f0e7;
-    --color-sand-200: #e9e1d2;
+    --color-sand-50: #fff;
+    --color-sand-100: #c0e1ff;
+    --color-sand-200: #e1effb;
     --color-sand-300: #d9cbb2;
     --color-sand-400: #c3ab85;
 
     /* Verde olivo — dark bands, footer, deep accents */
     --color-olive-300: #b3b78d;
-    --color-olive-400: #8f9464;
-    --color-olive-500: #757a4e;
-    --color-olive-600: #5c6139;
-    --color-olive-700: #464a2c;
+    --color-olive-400: #3f6fb0;
+    --color-olive-500: #1a4a8f;
+    --color-olive-600: #0e2f66;
+    --color-olive-700: #0a2a5e;
     --color-olive-800: #33361f;
-    --color-olive-900: #242718;
-    --color-olive-950: #191b0f;
+    --color-olive-900: #041d42;
+    --color-olive-950: #021637;
 
     /* Madera — the warm accent (CTAs, eyebrows on dark) */
-    --color-wood-300: #dcc09b;
-    --color-wood-400: #c8a173;
-    --color-wood-500: #ad8354;
+    --color-wood-300: #c0e1ff;
+    --color-wood-400: #1f4c8c;
+    --color-wood-500: #021637;
     --color-wood-600: #8e6941;
 
     /* Supporting neutrals */
-    --color-stone-warm: #a49b8c;
-    --color-beige: #efe6d6;
+    --color-stone-warm: #9aa7b5;
+    --color-beige: #c0e1ff;
+
+    /* City Inmobiliaria — co-branding (CTAs, nav logos) */
+    --color-city-blue: #021637;
+    --color-city-light: #c0e1ff;
+    --color-city-white: #fff;
 
     /* Ink — warm charcoal text, never pure black */
     --color-ink: #232019;

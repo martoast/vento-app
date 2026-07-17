@@ -29,8 +29,8 @@
                     @endforeach
                 </ul>
 
-                <a href="https://maps.google.com/?q=Calle+General+Emiliano+Zapata,+Obrera+1ra.+Secci%C3%B3n,+Tijuana,+B.C." target="_blank" rel="noopener" id="cta-mapa"
-                    class="eyebrow mt-9 inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Ver ubicación en mapa</a>
+                <a href="https://maps.app.goo.gl/arsyMzfwNJ4VWv198" target="_blank" rel="noopener noreferrer" id="cta-mapa"
+                    class="eyebrow mt-9 inline-flex items-center justify-center rounded-full bg-city-light px-8 py-4 text-[0.7rem] text-city-blue transition-colors hover:bg-city-white">Ver ubicación en mapa</a>
             </div>
 
             {{-- Map --}}

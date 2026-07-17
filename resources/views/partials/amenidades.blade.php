@@ -79,8 +79,9 @@
     </div>
 
     {{-- Slider --}}
-    <div x-ref="track"
-        class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-6 pb-2 lg:px-10 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div x-ref="track"
+            class="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <template x-for="(a, idx) in items" :key="idx">
             <article data-card class="group w-[70vw] shrink-0 snap-start sm:w-[320px] lg:w-[360px]">
                 {{-- Photo card → opens the bento modal --}}
@@ -121,7 +122,8 @@
                 </template>
             </article>
         </template>
-        <div class="w-2 shrink-0 lg:w-6" aria-hidden="true"></div>
+            <div class="w-2 shrink-0 lg:w-6" aria-hidden="true"></div>
+        </div>
     </div>
 
     {{-- ============================== BENTO MODAL ============================== --}}

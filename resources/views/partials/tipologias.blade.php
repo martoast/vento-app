@@ -26,10 +26,10 @@
 
     // Planos shown in the lightbox — B 01 has both versions (arrows navigate).
     $planos = [
-        ['src' => asset('images/vento-plano-a01.jpg'), 't' => 'Tipología A 01 — 107 m² · patio privado'],
-        ['src' => asset('images/vento-plano-a02.jpg'), 't' => 'Tipología A 02 — 88 m² · balcón privado'],
-        ['src' => asset('images/vento-plano-b01-107.jpg'), 't' => 'Tipología B 01 — 107 m² · patio privado'],
-        ['src' => asset('images/vento-plano-b01-88.jpg'), 't' => 'Tipología B 01 — 88 m² · balcón privado'],
+        ['src' => asset('images/vento-plano-a01.jpg?v=1784081349'), 't' => 'Tipología A 01 — 107 m² · patio privado'],
+        ['src' => asset('images/vento-plano-a02.jpg?v=1784081349'), 't' => 'Tipología A 02 — 88 m² · balcón privado'],
+        ['src' => asset('images/vento-plano-b01-107.jpg?v=1784081349'), 't' => 'Tipología B 01 — 107 m² · patio privado'],
+        ['src' => asset('images/vento-plano-b01-88.jpg?v=1784081349'), 't' => 'Tipología B 01 — 88 m² · balcón privado'],
     ];
 @endphp
 
@@ -48,7 +48,7 @@
             @foreach ($tipologias as $t)
                 <article class="reveal group flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/5 {{ $loop->last ? 'md:col-span-2 md:mx-auto md:max-w-md xl:col-span-1 xl:max-w-none' : '' }}">
                     <div class="relative overflow-hidden">
-                        <img src="{{ asset('images/' . $t['img']) }}" alt="{{ $t['nombre'] }} — interior Vento" loading="lazy"
+                        <img src="{{ asset('images/' . $t['img'] . '?v=1784081464') }}" alt="{{ $t['nombre'] }} — interior Vento" loading="lazy"
                             class="aspect-[16/10] w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105">
                         <span class="absolute left-5 top-5 rounded-full bg-olive-950/70 px-4 py-1.5 text-xs font-medium text-sand-50 backdrop-blur-sm">{{ $t['estado'] }}</span>
                     </div>
@@ -64,7 +64,7 @@
                         </ul>
                         <div class="mt-auto flex flex-col gap-3 pt-7">
                             <button type="button" @click="show({{ $t['plano'] }})" id="plano-{{ $loop->index }}"
-                                class="eyebrow inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-[0.65rem] text-sand-50 transition-colors hover:bg-wood-500">Ver distribución</button>
+                                class="eyebrow inline-flex items-center justify-center rounded-full bg-city-blue px-6 py-3 text-[0.65rem] text-city-white transition-colors hover:bg-wood-400">Ver distribución</button>
                             <a href="#contacto"
                                 class="eyebrow inline-flex items-center justify-center rounded-full border border-ink/20 px-6 py-3 text-[0.65rem] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-sand-50">Consultar disponibilidad</a>
                         </div>

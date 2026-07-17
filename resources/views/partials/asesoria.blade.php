@@ -69,12 +69,14 @@
                 <span>Acepto ser contactado por City Inmobiliaria vía llamada, mensaje o correo electrónico y confirmo haber leído el Aviso de Privacidad.</span>
             </label>
 
-            <div class="pt-2">
+            <div class="space-y-3 pt-2">
                 <button type="submit" id="cta-enviar" :disabled="sending"
                     class="eyebrow w-full rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400 disabled:cursor-wait disabled:opacity-60"
                     x-text="sending ? 'Enviando…' : 'Enviar solicitud'">Enviar solicitud</button>
+                <a href="tel:+526641158106" id="cta-llamar" onclick="if(window.fbq)fbq('track','Contact',{method:'call'})"
+                    aria-label="Llamar a City Inmobiliaria para solicitar información de VENTO"
+                    class="eyebrow block w-full rounded-full border border-city-blue bg-city-light px-8 py-4 text-center text-[0.7rem] text-city-blue transition-colors hover:bg-city-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-city-blue">¡Llama ya!</a>
             </div>
-            {{-- TODO: botones de WhatsApp y llamada — pendientes el número comercial de City Inmobiliaria --}}
             <p x-show="error" x-cloak class="pt-1 text-center text-xs text-red-600">No pudimos enviar tu solicitud. Intenta de nuevo en unos minutos.</p>
             <p class="pt-2 text-center text-[0.7rem] leading-relaxed text-ink-soft/70">Tu información será tratada con privacidad y utilizada únicamente para darte seguimiento.</p>
         </form>

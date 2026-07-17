@@ -21,7 +21,7 @@
     <meta name="keywords" content="Vento, departamentos Tijuana, departamentos 2 recámaras, Colonia Obrera Tijuana, City Inmobiliaria, roof deck, departamentos nuevos Tijuana, Molding Home, Taller N3">
     <meta name="author" content="City Inmobiliaria">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#191b0f">
+    <meta name="theme-color" content="#021637">
     <link rel="canonical" href="{{ $siteUrl }}/">
 
     {{-- Icons --}}
@@ -101,9 +101,15 @@
     {{-- ============================== PRELOADER ============================== --}}
     <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-olive-950">
         <div class="preloader-mark flex flex-col items-center text-sand-50">
-            @include('partials.logo')
+            <div class="flex items-center gap-[18px]">
+                <img src="{{ asset('images/city-logo-blanco.png') }}" alt="City Inmobiliaria"
+                    class="h-8 w-auto object-contain sm:h-9">
+                <span class="h-7 w-px bg-white/45 sm:h-8" aria-hidden="true"></span>
+                <img src="{{ asset('images/vento-logo.png') }}" alt="VENTO"
+                    class="h-7 w-auto object-contain sm:h-8">
+            </div>
             <div class="mt-10 h-px w-44 overflow-hidden rounded-full bg-sand-50/15">
-                <div id="preloader-bar" class="h-full w-0 rounded-full bg-wood-400 transition-[width] duration-300 ease-out"></div>
+                <div id="preloader-bar" class="h-full w-0 rounded-full bg-city-light transition-[width] duration-300 ease-out"></div>
             </div>
             <p id="preloader-pct" class="eyebrow mt-4 text-[0.55rem] text-sand-200/50">0%</p>
         </div>
@@ -117,12 +123,11 @@
             ['label' => 'Ubicación',   'href' => '#ubicacion'],
         ];
 
-        // Contacto comercial — pendiente: teléfono, WhatsApp y correo de City Inmobiliaria.
-        // Cuando lleguen, se agregan aquí y los botones flotantes/footer se activan solos.
-        $instagramUrl = 'https://www.instagram.com/vento.tij';
-        $mapsUrl = 'https://maps.google.com/?q=Calle+General+Emiliano+Zapata,+Obrera+1ra.+Secci%C3%B3n,+Tijuana,+B.C.';
+        // Contacto comercial — City Inmobiliaria
+        $instagramUrl = 'https://www.instagram.com/cityinmobiliaria.mx/';
+        $mapsUrl = 'https://maps.app.goo.gl/arsyMzfwNJ4VWv198';
         $waNumber = null;  // ej. '526641234567'
-        $telNumber = null; // ej. '+526641234567'
+        $telNumber = '+526641158106';
         $waText = rawurlencode('Hola, me interesa Vento. ¿Me pueden enviar información de disponibilidad?');
     @endphp
 
@@ -135,11 +140,17 @@
             {{-- Logo --}}
             <a
                 href="#inicio"
-                class="group relative z-50 flex items-center gap-3 transition-colors duration-500"
-                :class="navSolid || navOpen ? 'text-ink' : 'text-sand-50'"
-                aria-label="Vento — inicio"
+                class="group relative z-50 flex items-center"
+                aria-label="Vento — City Inmobiliaria — inicio"
             >
-                @include('partials.logo', ['variant' => 'auto'])
+                <span class="relative block">
+                    <img src="{{ asset('images/city-logo-blanco.png') }}" alt="City Inmobiliaria"
+                        class="block h-9 w-auto object-contain opacity-100 transition-opacity duration-500 sm:h-10"
+                        :class="navSolid || navOpen ? 'opacity-0' : 'opacity-100'">
+                    <img src="{{ asset('images/city-logo-azul.png') }}" alt="City Inmobiliaria"
+                        class="absolute left-0 top-0 block h-9 w-auto object-contain opacity-0 transition-opacity duration-500 sm:h-10"
+                        :class="navSolid || navOpen ? 'opacity-100' : 'opacity-0'">
+                </span>
             </a>
 
             {{-- Desktop links — centered in the navbar --}}
@@ -203,7 +214,13 @@
             <div class="grid gap-12 md:grid-cols-3">
                 {{-- Brand + address --}}
                 <div class="text-sand-50">
-                    @include('partials.logo')
+                    <div class="flex items-center gap-[18px]">
+                        <img src="{{ asset('images/city-logo-blanco.png') }}" alt="City Inmobiliaria"
+                            class="h-8 w-auto object-contain sm:h-9">
+                        <span class="h-7 w-px bg-white/45 sm:h-8" aria-hidden="true"></span>
+                        <img src="{{ asset('images/vento-logo.png') }}" alt="VENTO"
+                            class="h-7 w-auto object-contain sm:h-8">
+                    </div>
                     <p class="mt-6 max-w-xs text-sm leading-relaxed text-sand-200/70">
                         Calle General Emiliano Zapata, Lt. 002, Mz. 044,<br>
                         Colonia Obrera 1A Sección,<br>
@@ -221,7 +238,6 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="#proyecto" class="transition-colors hover:text-wood-300">Conoce Vento</a></li>
                         <li><a href="#tipologias" class="transition-colors hover:text-wood-300">Tipologías</a></li>
-                        <li><a href="#disponibilidad" class="transition-colors hover:text-wood-300">Disponibilidad</a></li>
                         <li><a href="#amenidades" class="transition-colors hover:text-wood-300">Amenidades</a></li>
                         <li><a href="#ubicacion" class="transition-colors hover:text-wood-300">Ubicación</a></li>
                         <li><a href="#interiores" class="transition-colors hover:text-wood-300">Interiores</a></li>
@@ -235,7 +251,7 @@
                         <li>
                             <a href="{{ $instagramUrl }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 transition-colors hover:text-wood-300">
                                 <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.7-.3 1.8-.1 1.3-.1 1.6-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.4.3.7.6 1 .3.3.6.5 1 .6.3.1.7.3 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.4-.2.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.7.3-1.8.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.7-.3-1.8-.3-1.3-.1-1.6-.1-4.8-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 7.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zm5.6-7.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-                                Instagram · @vento.tij
+                                Instagram · @cityinmobiliaria.mx
                             </a>
                         </li>
                         <li>
@@ -246,12 +262,12 @@
                         </li>
                         {{-- TODO: WhatsApp, teléfono y correo de City Inmobiliaria (pendientes de confirmación) --}}
                     </ul>
-                    <a href="#contacto" class="eyebrow mt-7 inline-flex items-center justify-center rounded-full bg-wood-500 px-7 py-3.5 text-[0.65rem] text-sand-50 transition-colors hover:bg-wood-400">Solicitar información</a>
+                    <a href="#contacto" class="eyebrow mt-7 inline-flex items-center justify-center rounded-full bg-city-light px-7 py-3.5 text-[0.65rem] text-city-blue transition-colors hover:bg-city-white">Solicitar información</a>
                 </div>
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Vento · Comercializado por City Inmobiliaria. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.8</span></p>
+                <p>© {{ date('Y') }} Vento · Comercializado por City Inmobiliaria. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.9</span></p>
                 <p class="mt-2">
                     Las imágenes mostradas son representaciones ilustrativas del proyecto y pueden variar respecto al producto final.
                     La información de tipologías, medidas, precios, acabados y disponibilidad está sujeta a cambios sin previo aviso.
@@ -263,12 +279,12 @@
     {{-- ============================== FLOATING ACTIONS ============================== --}}
     <div class="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-2.5 sm:right-6 sm:gap-3">
         {{-- Maps --}}
-        <a href="{{ $mapsUrl }}" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps"
+        <a href="{{ $mapsUrl }}" target="_blank" rel="noopener" aria-label="Ver ubicación de VENTO en Google Maps"
             class="flex h-10 w-10 items-center justify-center rounded-full bg-olive-900 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:h-12 sm:w-12">
             <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current sm:h-6 sm:w-6"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         </a>
         {{-- Instagram --}}
-        <a href="{{ $instagramUrl }}" target="_blank" rel="noopener" aria-label="Instagram de Vento"
+        <a href="{{ $instagramUrl }}" target="_blank" rel="noopener" aria-label="Visitar Instagram de City Inmobiliaria"
             class="flex h-10 w-10 items-center justify-center rounded-full bg-wood-500 text-sand-50 shadow-lg shadow-ink/20 transition-transform duration-300 hover:scale-110 sm:h-12 sm:w-12">
             <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.7-.3 1.8-.1 1.3-.1 1.6-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.4.3.7.6 1 .3.3.6.5 1 .6.3.1.7.3 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.4-.2.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.7.3-1.8.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.7-.3-1.8-.3-1.3-.1-1.6-.1-4.8-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 7.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zm5.6-7.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
         </a>

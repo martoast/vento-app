@@ -14,7 +14,7 @@
                 Solicita disponibilidad, revisa las tipologías y agenda una asesoría personalizada con el equipo de City Inmobiliaria.
             </p>
             <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
-                <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Solicitar disponibilidad</a>
+                <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-city-light px-8 py-4 text-[0.7rem] text-city-blue transition-colors hover:bg-city-white">Solicitar disponibilidad</a>
                 <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full border border-sand-50/40 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-sand-50/10">Agendar recorrido</a>
             </div>
         </div>
